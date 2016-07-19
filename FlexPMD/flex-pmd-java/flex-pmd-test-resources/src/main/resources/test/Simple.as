@@ -1,1 +1,0 @@
-package simple { public class Simple    {      public function Simple ( )      {         trace ( "Simple" );      }   }   }
