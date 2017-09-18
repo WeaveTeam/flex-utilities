@@ -37,8 +37,9 @@ ApacheFlexJS.handleFlexJSMirrorsResponse = function (error, response, body)
     if (!error && response.statusCode == 200)
     {
         var mirrors = JSON.parse(body);
-        var flexJSPreferredDownloadURL = mirrors.preferred + pathToFlexJSBinary + fileNameFlexJSBinary;
-        console.log('Downloading Apache FlexJS');
+        //var flexJSPreferredDownloadURL = mirrors.preferred + pathToFlexJSBinary + fileNameFlexJSBinary;
+        var flexJSPreferredDownloadURL = 'http://archive.apache.org/dist/flex/flexjs/0.6.0/binaries/apache-flex-flexjs-0.6.0-bin.zip'
+        console.log('Downloading Apache FlexJS from ' + flexJSPreferredDownloadURL);
         request
             .get(flexJSPreferredDownloadURL)
             .pipe(fs.createWriteStream(constants.DOWNLOADS_FOLDER + fileNameFlexJSBinary)
